@@ -16,6 +16,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compile('org.flywaydb:flyway-core')
+	compile('javax.xml.bind:jaxb-api')
 	runtimeOnly 'mysql:mysql-connector-java'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -23,4 +24,9 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+jar {
+	manifest {
+		attributes 'sum-service': 'com.foo.bar.MainClass'
+	}
 }

@@ -1,11 +1,11 @@
 package com.example.ulbitvspring.repository;
 
-import com.example.ulbitvspring.entity.UserEntity;
+import com.example.ulbitvspring.entity.SumEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepo<List, sql> extends CrudRepository<UserEntity, Long> {
+public interface SumRepo<List, sql> extends CrudRepository<SumEntity, Long> {
 
-    UserEntity findByUsername(String name);
+    SumEntity findByUsername(String name);
 
         String sql = "select value from project where name ;";
     }

@@ -1,23 +1,29 @@
 package com.example.ulbitvspring.entity;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-
-
-
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name = "user")
-public class UserEntity {
+public class SumEntity {
+    @Autowired
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    public static String name;
     private static Integer value;
 
-
-    public UserEntity() {
+    public Long getId() {
+        return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public SumEntity() {
+    }
 
     public String getUsername() {
         return name;
@@ -34,6 +40,5 @@ public class UserEntity {
     public void setValue(Integer value) {
         this.value = value;
     }
-
 
 }
