@@ -3,18 +3,11 @@ create table hibernate_sequence (
 ) engine=MyISAM;
 
 insert into hibernate_sequence values ( 1 );
-insert into hibernate_sequence values ( 1 );
 
-CREATE TABLE user (
+CREATE TABLE sum_values (
     id BIGINT NOT NULL AUTO_INCREMENT,
-    password varchar(64) not null,
-    username varchar(64) not null unique,
+    name varchar(64) ,
+    value varchar(64),
     PRIMARY KEY (id)
 ) engine=MyISAM;
 
-CREATE TABLE todo (
-    id BIGINT NOT NULL AUTO_INCREMENT,
-    title varchar(64) not null,
-    completed BOOLEAN NOT NULL,
-    PRIMARY KEY (id)
-) engine=MyISAM;

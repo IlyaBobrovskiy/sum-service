@@ -1,12 +1,18 @@
 package com.example.ulbitvspring;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class Views {
-    private int code;
-    private String description;
 
-    @JsonGetter("name")
+
+    @JsonProperty("code")
+    private int code;
+    @JsonProperty("description")
+    private String description;
+    private Integer sum;
+
+
     public int getCode() {
         return code;
     }
@@ -14,12 +20,23 @@ public final class Views {
     public void setCode(int code) {
         this.code = code;
     }
-@JsonGetter("description")
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Views(){
+        this.code = 0;
+        this.description = "OK";
+    }
+
+    public Views(int code) {
+        this.code = code;
+        this.description = description;
+        this.sum = sum;
     }
 }

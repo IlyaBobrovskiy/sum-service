@@ -12,22 +12,38 @@ import javax.swing.text.html.parser.Entity;
 @Service
 public class SumService {
 
+    @Autowired
     private SumRepo userRepo;
 
-    public int getOne(Long id) throws SumNotFoundException {
-        String user = userRepo.findByUsername(SumEntity.name).getUsername();
-        if (user == null) {
-            throw new SumNotFoundException("Пользователь не найден");
+    public Sum getOne(String name) throws SumNotFoundException {
+        SumEntity entity = userRepo.findByName(name);
+        if (entity == null) {
+            throw new SumNotFoundException("Значение не найдено");
         }
-        return Sum.toModel(SumEntity.name);
+        return Sum.toModel(entity);
     }
 
-    public void registration(SumEntity user) {
+    public boolean add(String name, Integer value){
+        SumEntity entity = new SumEntity();
+        entity.setName(name);
+        entity.setValue(value);
+        SumEntity savedEntity =(SumEntity) userRepo.save(entity);
+        if (savedEntity != null){
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    public Long delete(Long id) {
-        userRepo.delete(SumEntity.name);
-        return id;
+    public void delete(String name) throws SumNotFoundException {
+        SumEntity entity = userRepo.findByName(name);
+        if(entity != null){
+            userRepo.delete(entity);
+        }else{
+            throw new SumNotFoundException("Значение не найдено");
+        }
     }
+
+
 }
 
