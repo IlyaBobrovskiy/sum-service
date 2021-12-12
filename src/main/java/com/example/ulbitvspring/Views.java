@@ -9,7 +9,7 @@ public final class Views {
     private int code;
     @JsonProperty("description")
     private String description;
-    @JsonProperty("SumModel")
+    @JsonProperty("sum")
     private Integer sum;
 
 
