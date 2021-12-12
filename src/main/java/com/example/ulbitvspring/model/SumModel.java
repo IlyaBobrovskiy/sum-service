@@ -2,17 +2,17 @@ package com.example.ulbitvspring.model;
 
 import com.example.ulbitvspring.entity.SumEntity;
 
-public class Sum {
+public class SumModel {
 
     private Long id;
     private String name;
     private Integer value;
 
-    public Sum() {
+    public SumModel() {
     }
 
-    public static Sum toModel(SumEntity entity) {
-        Sum sumModel = new Sum();
+    public static SumModel toModel(SumEntity entity) {
+        SumModel sumModel = new SumModel();
         sumModel.setName(entity.getName());
         sumModel.setValue(entity.getValue());
         return sumModel;

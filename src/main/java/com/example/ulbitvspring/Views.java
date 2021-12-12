@@ -1,6 +1,5 @@
 package com.example.ulbitvspring;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class Views {
@@ -10,6 +9,7 @@ public final class Views {
     private int code;
     @JsonProperty("description")
     private String description;
+    @JsonProperty("SumModel")
     private Integer sum;
 
 
@@ -29,14 +29,14 @@ public final class Views {
         this.description = description;
     }
 
-    public Views(){
+    public Views() {
         this.code = 0;
         this.description = "OK";
     }
 
-    public Views(int code) {
-        this.code = code;
-        this.description = description;
+    public Views(int sum) {
+        this.code = 0;
+        this.description = "OK";
         this.sum = sum;
     }
 }
