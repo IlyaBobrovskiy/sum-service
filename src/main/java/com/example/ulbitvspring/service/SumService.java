@@ -25,12 +25,7 @@ public class SumService {
         SumEntity entity = new SumEntity();
         entity.setName(name);
         entity.setValue(value);
-        SumEntity savedEntity =  userRepo.save(entity);
-        if (savedEntity != null) {
-            return true;
-        } else {
-            return false;
-        }
+        userRepo.save(entity);
     }
 
     public void delete(String name) throws SumNotFoundException {
