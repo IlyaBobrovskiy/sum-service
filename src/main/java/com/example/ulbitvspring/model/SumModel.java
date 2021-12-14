@@ -4,7 +4,6 @@ import com.example.ulbitvspring.entity.SumEntity;
 
 public class SumModel {
 
-    private Long id;
     private String name;
     private Integer value;
 
@@ -18,17 +17,6 @@ public class SumModel {
         return sumModel;
     }
 
-    public String getUsername() {
-        return name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

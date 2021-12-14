@@ -25,7 +25,7 @@ public class SumService {
         SumEntity entity = new SumEntity();
         entity.setName(name);
         entity.setValue(value);
-        SumEntity savedEntity = (SumEntity) userRepo.save(entity);
+        SumEntity savedEntity =  userRepo.save(entity);
         if (savedEntity != null) {
             return true;
         } else {
